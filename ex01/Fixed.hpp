@@ -6,7 +6,7 @@
 /*   By: rmakoni <rmakoni@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/22 16:46:46 by rmakoni           #+#    #+#             */
-/*   Updated: 2025/04/30 13:57:15 by rmakoni          ###   ########.fr       */
+/*   Updated: 2025/04/30 14:53:01 by rmakoni          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,8 +28,11 @@ class Fixed
 
         //Copy constructor
         Fixed(const Fixed& copy);
+        Fixed(const int intNum);
+        Fixed(const float fpNum);
 
         Fixed& operator=(const Fixed& copy);
+        std::ostream& operator<<=(std::ostream& os, const Fixed& copy);
 
         //Destructor
         ~Fixed();
@@ -38,5 +41,8 @@ class Fixed
         int getRawBits(void) const;
         //Setter
         void setRawBits(int const raw);
+        //Conversion functions
+        float toFloat(void) const;
+        int toInt(void) const;
 };
 #endif

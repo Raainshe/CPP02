@@ -6,7 +6,7 @@
 /*   By: rmakoni <rmakoni@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/22 16:46:39 by rmakoni           #+#    #+#             */
-/*   Updated: 2025/04/30 13:50:58 by rmakoni          ###   ########.fr       */
+/*   Updated: 2025/04/30 14:50:15 by rmakoni          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,4 +47,33 @@ void Fixed::setRawBits(int const raw)
 {
     std::cout << "setRawBits member function called" << std::endl;
     this->_fixedPointNum = raw;
+}
+
+Fixed::Fixed(const int intNum)
+{
+    std::cout << "Int constructor called" << std::endl;
+    this->_fixedPointNum = intNum << _fracBits;
+}
+
+Fixed::Fixed(const float fpNum)
+{
+    std::cout << "Float constructor called" << std::endl;
+    this->_fixedPointNum = roundf(fpNum * (1 << _fracBits));
+}
+
+float Fixed::toFloat(void) const
+{
+    return (float)this->_fixedPointNum / (1 << _fracBits);
+}
+
+int Fixed::toInt(void) const
+{
+    return this->_fixedPointNum >> _fracBits;
+}
+
+
+std::ostream& operator<<(std::ostream& os, const Fixed& fixed)
+{
+    os << fixed.toFloat();
+    return os;
 }
