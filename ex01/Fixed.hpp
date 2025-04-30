@@ -6,7 +6,7 @@
 /*   By: rmakoni <rmakoni@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/22 16:46:46 by rmakoni           #+#    #+#             */
-/*   Updated: 2025/04/30 14:53:01 by rmakoni          ###   ########.fr       */
+/*   Updated: 2025/04/30 18:35:55 by rmakoni          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,8 +32,8 @@ class Fixed
         Fixed(const float fpNum);
 
         Fixed& operator=(const Fixed& copy);
-        std::ostream& operator<<=(std::ostream& os, const Fixed& copy);
-
+        friend std::ostream& operator<<(std::ostream& os, const Fixed& copy);
+        
         //Destructor
         ~Fixed();
 

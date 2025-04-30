@@ -6,7 +6,7 @@
 /*   By: rmakoni <rmakoni@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/22 16:46:39 by rmakoni           #+#    #+#             */
-/*   Updated: 2025/04/30 14:50:15 by rmakoni          ###   ########.fr       */
+/*   Updated: 2025/04/30 18:28:52 by rmakoni          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,6 +74,6 @@ int Fixed::toInt(void) const
 
 std::ostream& operator<<(std::ostream& os, const Fixed& fixed)
 {
-    os << fixed.toFloat();
+    os << fixed.toFloat(); 
     return os;
 }
