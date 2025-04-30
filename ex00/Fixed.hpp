@@ -6,12 +6,36 @@
 /*   By: rmakoni <rmakoni@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/22 16:46:46 by rmakoni           #+#    #+#             */
-/*   Updated: 2025/04/22 16:46:58 by rmakoni          ###   ########.fr       */
+/*   Updated: 2025/04/30 10:44:54 by rmakoni          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FIXED_HPP
 # define FIXED_HPP
 #include <iostream>
+#include <string>
 
+
+class Fixed
+{
+    private:
+        int _fixedPointNum;
+        static const int _fracBits = 8;
+    public:
+        //Default constructor 
+        Fixed();
+
+        //Copy constructor
+        Fixed(const Fixed& copy);
+
+        Fixed& operator=(const Fixed& copy);
+
+        //Destructor
+        ~Fixed();
+
+        //Getter
+        int getRawBits(void) const;
+        //Setter
+        void setRawBits(int const raw);
+};
 #endif
